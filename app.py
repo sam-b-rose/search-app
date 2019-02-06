@@ -2,7 +2,12 @@
 from flask import Flask, render_template
 
 # create the application object
-app = Flask(__name__)
+app = Flask(
+    __name__,
+    static_url_path='',
+    static_folder='static/dist',
+    template_folder='templates'
+)
 
 # use decorators to link the function to a url
 @app.route('/')

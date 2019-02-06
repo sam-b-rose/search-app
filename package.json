@@ -1,0 +1,17 @@
+{
+  "name": "search-app",
+  "version": "0.0.0",
+  "description": "A string searching app",
+  "author": "Sam Rose <samrose3@gmail.com>",
+  "scripts": {
+    "start": "yarn run build",
+    "build": "parcel build static/src/app.js -d static/dist",
+    "watch": "parcel watch static/src/app.js -d static/dist"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "node-sass": "^4.7.2",
+    "parcel-bundler": "^1.3.1"
+  }
+}

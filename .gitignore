@@ -15,9 +15,4 @@ _mailinglist
 .pytest_cache/
 .idea/
 .vscode/
-
-# Coverage reports
-htmlcov/
-.coverage
-.coverage.*
-*,cover
+node_modules
