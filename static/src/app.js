@@ -100,7 +100,7 @@ class SearchApp {
               <strong>${matchText}</strong>${contextText}${hasEllipsis ? '...' : ''}
             </div>
             <div>
-              at index <code>${start}</code>, line <code>${lineNumber}</code>
+              at index <code>${start}</code>, line <code>${lineNumber + 1}</code>
             </div>
           </div>
         `
