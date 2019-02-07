@@ -17,7 +17,7 @@
       <div class="panel">
         <div class="section">
           <p class="label">Search</p>
-          <input class="sa-search-input input" type="text">
+          <input class="sa-search-input input" type="text" placeholder="Search for a word or phrase">
         </div>
         <div class="section">
           <p class="label">Matches</p>
@@ -30,10 +30,10 @@
         <div class="section section--full-w-label">
           <div class="label flex items-center justify-between">
             <div>Input</div>
-            <label class="button button--text" for="sa-file">Upload a file</label>
+            <label class="button button--text" for="sa-file" tabindex="0">Upload file</label>
           </div>
-          <input type="file" name="file" id="sa-file" class="sa-file-input inputfile" />
-          <textarea class="sa-text-input textarea" name="input-text"></textarea>
+          <input class="sa-file-input inputfile" type="file" name="file" id="sa-file" accept="text/*" tabindex="-1" />
+          <textarea class="sa-text-input textarea" name="input-text" placeholder="Upload or type the text you would like to search"></textarea>
         </div>
       </div>
 

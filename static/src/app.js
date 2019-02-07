@@ -1,5 +1,9 @@
 import './styles.scss'
-
+/**
+ * Creates a new SearchApp component
+ * @class
+ * @param {object} [opts] - Options object to confugure the SearchApp
+ */
 class SearchApp {
   constructor(opts = {}) {
     // constants
@@ -16,6 +20,11 @@ class SearchApp {
     this.$textInput = document.querySelector(`.${this.prefix}-text-input`)
     this.$fileInput = document.querySelector(`.${this.prefix}-file-input`)
     this.$resultsList = document.querySelector(`.${this.prefix}-results-list`)
+
+    // Check DOM
+    if (!this.hasAllElements()) {
+      return console.log('Please check that all required DOM elements are defined.')
+    }
 
     this.init()
   }
@@ -64,7 +73,6 @@ class SearchApp {
         const re = new RegExp(`${this.query}`, 'igm')
 
         while ((match = re.exec(line)) != null) {
-          console.log("match found at " + match.index);
           lineMatches.push(match.index)
         }
 
@@ -104,9 +112,23 @@ class SearchApp {
     this.$resultsList.innerHTML = ''
     this.$resultsList.appendChild(fragment)
   }
+
+  hasAllElements() {
+    const elements = [
+      '$searchInput',
+      '$textInput',
+      '$fileInput',
+      '$resultsList'
+    ]
+    return elements.every(el => {
+      if (!this[el]) {
+        console.log('Required element not found for SearchApp: ', el)
+        return false
+      }
+      return true
+    })
+  }
 }
 
-const searchApp = new SearchApp()
-window.sa = searchApp
-export default searchApp
+export default new SearchApp()
 

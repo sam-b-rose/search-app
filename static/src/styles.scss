@@ -2,17 +2,17 @@
 
 :root {
   --primary-color: #344f71;
-  --separator-color: rgba(58,58,58,.1);
+  --secondary-color: #13151d;
   --border-color: #bdbdbd;
-  --input-color: rgb(51, 51, 51);
+  --input-color: #333333;
 }
 
-// Core
+// Base
 html,
 body {
   width: 100%;
   height: 100%;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif
 }
 
 ul,
@@ -56,7 +56,7 @@ li {
 // Elements
 .label {
   margin: 0.5rem 0 ;
-  border-bottom: 1px solid var(--separator-color);
+  border-bottom: 1px solid rgba(#13151d, 0.1);
   color: var(--primary-color);
   font-weight: 700;
   line-height: 1.5rem;
@@ -65,47 +65,36 @@ li {
 
 .input,
 .textarea {
-  width: 92%;
+  width: 94%;
   margin: 0 auto;
-  padding: 0.5rem 0.75rem;
+  padding: 0.75rem 0.75rem;
   border: 1px solid var(--border-color);
   border-radius: 3px;
   background: #fff;
   color: var(--input-color);
   outline: 0;
   font-size: 0.875rem;
-}
-
-.textarea {
   resize: none;
+
+  &:focus {
+    border-color: var(--secondary-color);
+  }
 }
 
 .button {
-  padding: 0.5rem 1rem;
-  color: rgba(0,0,0,.8);
-  border: 1px solid #999;
+  padding: 0.25rem;
+  color: var(--secondary-color);
   border: transparent;
-  background-color: #E6E6E6;
+  background-color: transparent;
   border-radius: 2px;
-  font-size: 0.625rem;
+  font-size: 0.75rem;
   line-height: 1;
   text-transform: uppercase;
   cursor: pointer;
 
   &:hover,
   &:focus {
-    background-image: linear-gradient(transparent,rgba(0,0,0,.05) 40%,rgba(0,0,0,.1));
-  }
-}
-
-.button--text {
-  padding: 0.25rem;
-  background-color: transparent;
-
-  &:hover,
-  &:focus {
     color: var(--primary-color);
-    background-image: none;
   }
 }
 
@@ -115,7 +104,7 @@ li {
 	opacity: 0;
 	overflow: hidden;
 	position: absolute;
-	z-index: -1;
+  z-index: -1;
 }
 
 // Utilities
