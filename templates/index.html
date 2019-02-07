@@ -6,11 +6,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}">
-  <title>FindItNow</title>
+  <title>Search App</title>
 </head>
 
 <body>
-  Find what you are looking for NOW!
+
+  <div class="grid">
+
+    <div class="panel left">
+      <div class="section">
+        <p>Search</p>
+        <input class="sa-search-input" type="text">
+      </div>
+      <div class="section">
+        <p>Matches</p>
+        <ul class="sa-results-list">
+          <li></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="panel right">
+      <div class="section">
+        <p>Input</p>
+        <input class="sa-file-input" type="file" name="input-file">
+        <textarea class="sa-text-input" name="input-text" cols="30" rows="10"></textarea>
+      </div>
+    </div>
+
+  </div>
 
   <script src="{{ url_for('static', filename='app.js') }}"></script>
 </body>
