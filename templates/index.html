@@ -11,29 +11,33 @@
 
 <body>
 
-  <div class="grid">
+  <div class="container">
+    <div class="grid">
 
-    <div class="panel left">
-      <div class="section">
-        <p>Search</p>
-        <input class="sa-search-input" type="text">
+      <div class="panel">
+        <div class="section">
+          <p class="label">Search</p>
+          <input class="sa-search-input input" type="text">
+        </div>
+        <div class="section">
+          <p class="label">Matches</p>
+          <ul class="sa-results-list list">
+          </ul>
+        </div>
       </div>
-      <div class="section">
-        <p>Matches</p>
-        <ul class="sa-results-list">
-          <li></li>
-        </ul>
+
+      <div class="panel">
+        <div class="section section--full-w-label">
+          <div class="label flex items-center justify-between">
+            <div>Input</div>
+            <label class="button button--text" for="sa-file">Upload a file</label>
+          </div>
+          <input type="file" name="file" id="sa-file" class="sa-file-input inputfile" />
+          <textarea class="sa-text-input textarea" name="input-text"></textarea>
+        </div>
       </div>
+
     </div>
-
-    <div class="panel right">
-      <div class="section">
-        <p>Input</p>
-        <input class="sa-file-input" type="file" name="input-file">
-        <textarea class="sa-text-input" name="input-text" cols="30" rows="10"></textarea>
-      </div>
-    </div>
-
   </div>
 
   <script src="{{ url_for('static', filename='app.js') }}"></script>

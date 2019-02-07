@@ -54,7 +54,8 @@ class SearchApp {
   }
 
   search() {
-    if (!this.query) this.results = []
+    if (!this.query || !this.input)
+      return this.results = []
 
     this.results = this.input
       .map(line => {
@@ -75,20 +76,26 @@ class SearchApp {
     const fragment = document.createDocumentFragment()
 
     this.results.forEach((line, lineNumber) => {
-      console.log(line)
       line.forEach(matchIdx => {
         const li = document.createElement('li')
         const start = matchIdx
         const end = matchIdx + this.query.length
         const matchText = this.input[lineNumber].slice(start, end)
 
-        const padding = 15
-        console.log((end + padding), this.input[lineNumber].length)
+        const maxLength = 20
+        const padding = maxLength - matchText.length
         const hasEllipsis = (end + padding) < this.input[lineNumber].length
-
         const contextText = this.input[lineNumber].slice(end, end + padding)
-        const html = `<span>${matchText}</span> ${contextText}${hasEllipsis ? ' ...' : ''}`
-        console.log(html)
+        const html = `
+          <div class="flex justify-between">
+            <div>
+              <strong>${matchText}</strong>${contextText}${hasEllipsis ? '...' : ''}
+            </div>
+            <div>
+              at index <code>${start}</code>, line <code>${lineNumber}</code>
+            </div>
+          </div>
+        `
         li.innerHTML = html
         fragment.appendChild(li)
       })
@@ -99,5 +106,7 @@ class SearchApp {
   }
 }
 
-export default new SearchApp()
+const searchApp = new SearchApp()
+window.sa = searchApp
+export default searchApp
 
