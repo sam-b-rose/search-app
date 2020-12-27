@@ -8,8 +8,6 @@ Need to find a word or phrase in a body of text? Quickly upload a text file or p
 
 Search App will find all the matches and display them with the index and line number where the match is found.
 
-[Try it out!](https://search-app.samrose3.com)
-
 ## Running the app
 
 You will need to have node `^10.x` and python `^3.7` installed on your machine.
